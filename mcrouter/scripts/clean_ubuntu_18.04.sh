@@ -22,6 +22,10 @@ apt-get autoremove --purge -y
 apt-get autoclean -y
 apt-get clean -y
 
+# OPTIONAL: Installs basic network tools to aid in debugging
+apt-get --no-install-recommends -y install telnet traceroute ngrep net-tools \
+    iftop mtr-tiny netcat iputils-ping
+
 # IMPORTANT: Needed as folly is compiled against a specific version
 # of zstd, which isn't available from Ubuntu upstream.
 # See https://github.com/facebook/mcrouter/blob/
